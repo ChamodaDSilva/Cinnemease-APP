@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">CinnaMease</string>
+    <string name="cinnamease">CinnaMease</string>
+    <string name="hello_again">Hello Again!</string>
+    <string name="welcome_back_you_ve_been_missed">Welcome Back! You’ve Been Missed!</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="or">Or</string>
+    <string name="sign_in_with">Sign In With</string>
+    <string name="don_t_have_an_account_sign_in">Don’t have an account? ?</string>
+    <string name="create_account">Create Account</string>
+    <string name="let_s_create_an_account_together">Let’s create an account together!</string>
+    <string name="name">Name</string>
+    <string name="email_sinup">Email</string>
+    <string name="password_signup">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="or_signup">Or</string>
+    <string name="sign_up_with">Sign Up With</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="output_page">OutPut Page</string>
+    <string name="matured_yayy">Matured, Yayy!</string>
+    <string name="scan_nav">Scan</string>
+    <string name="home_nav">Home</string>
+    <string name="history_nav">History</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="history_page_nav">History Page</string>
+    <string name="scan_page_nav">Scan Page</string>
+    <string name="home_page_nav">Home Page</string>
+</resources>

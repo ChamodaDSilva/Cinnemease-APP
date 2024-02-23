@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="home_bg">#FFFFFFFF</color>
+    <color name="button_bg">#76453B</color>
+    <color name="text_small">#B19470</color>
+    <color name="text_large">#76453B</color>
+    <color name="screen_bg">#F8FAE5</color>
+    <color name="text_next">#B3A398</color>
+    <color name="one">#B19470</color>
+    <color name="two">#76453B</color>
+    <color name="three">#F8FAE5</color>
+
+</resources>

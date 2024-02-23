@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="@string/home_nav"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:id="@+id/home_navbar"/>
+    <item
+        android:title="@string/scan_nav"
+        android:icon="@drawable/scanner"
+        android:id="@+id/scan_navbar"/>
+    <item
+        android:title="@string/history_nav"
+        android:icon="@drawable/ic_baseline_access_time_24"
+        android:id="@+id/history_navbar"/>
+</menu>
