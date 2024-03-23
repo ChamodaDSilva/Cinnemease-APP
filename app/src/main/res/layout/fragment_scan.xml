@@ -5,56 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    app:circularflow_radiusInDP="true"
     tools:context=".ScanFragment">
 
 
     <ImageButton
         android:id="@+id/btn_camera"
-        android:layout_width="132dp"
-        android:layout_height="57dp"
+        android:layout_width="138dp"
+        android:layout_height="122dp"
         android:layout_marginEnd="8dp"
-        android:src="@drawable/ic_baseline_backup_24"
+        android:backgroundTint="@color/app_primary"
+        android:src="@drawable/camera_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_upload"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.694" />
+        app:layout_constraintVertical_bias="0.791"
+        tools:src="@drawable/camera_icon" />
 
     <ImageButton
         android:id="@+id/btn_upload"
-        android:layout_width="130dp"
-        android:layout_height="54dp"
+        android:layout_width="138dp"
+        android:layout_height="122dp"
         android:layout_marginStart="8dp"
-        android:src="@drawable/ic_baseline_add_24"
+        android:backgroundTint="@color/app_primary"
+        android:src="@drawable/upload_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_camera"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.691" />
+        app:layout_constraintVertical_bias="0.791"
+        tools:src="@drawable/upload_icon" />
 
     <ImageView
         android:id="@+id/imageViewUpload"
-        android:layout_width="382dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="126dp"
-        android:layout_marginBottom="194dp"
+        android:layout_width="334dp"
+        android:layout_height="286dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="56dp"
+
         android:src="@drawable/add_image"
         app:layout_constraintBottom_toTopOf="@+id/textResult"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:text="Please use one following options.."
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:text="Please choose an option.."
+
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewUpload" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.579" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

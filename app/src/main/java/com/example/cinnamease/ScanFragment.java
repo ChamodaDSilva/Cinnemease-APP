@@ -174,8 +174,15 @@ public class ScanFragment extends Fragment {
                                 Log.d("API_RESPONSE", "Maturity Score: " + maturityScore);
                                 Log.d("API_RESPONSE", "Maturity Status: " + maturityStatus);
 
+                                String textResult;
+                                if (maturityStatus.equals("Matured")){
+                                    textResult="You are in the best time to harvest.";
+                                }else{
+                                    textResult="It's not the best time to harvest.";
+                                }
+
                                 // Update TextView with maturity status
-                                textViewResult.setText(maturityStatus);
+                                textViewResult.setText(textResult);
                             }
                         });
                     } catch (JSONException e) {

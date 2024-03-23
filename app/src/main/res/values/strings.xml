@@ -27,5 +27,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="history_page_nav">History Page</string>
     <string name="scan_page_nav">Scan Page</string>
-    <string name="home_page_nav">Home Page</string>
+    <string name="home_page_nav">Welcome to the Cinnamease app!</string>
 </resources>

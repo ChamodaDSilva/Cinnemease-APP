@@ -8,19 +8,19 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="266dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="356dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="328dp"
+        android:layout_marginEnd="127dp"
+        android:layout_marginBottom="312dp"
         android:text="@string/cinnamease"
         android:textColor="@color/text_small"
-        android:textSize="55sp"
+        android:textSize="45sp"
         android:textStyle="bold" />
 
 </RelativeLayout>
