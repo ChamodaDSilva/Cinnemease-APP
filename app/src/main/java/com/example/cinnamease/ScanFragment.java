@@ -212,6 +212,17 @@ public class ScanFragment extends Fragment {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             imgUploaded.setImageBitmap(imageBitmap);
+
+            // Convert bitmap to byte array
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+            byte[] byteArray = byteArrayOutputStream.toByteArray();
+
+            // Update TextView with maturity status
+            textViewResult.setText("Waiting for result!");
+            // Make API call with the byte array
+            makeApiCall(byteArray);
+
         } else if (requestCode == REQUEST_IMAGE_FROM_STORAGE && resultCode == getActivity().RESULT_OK) {
             // Pick image from storage
             try {
