@@ -13,14 +13,29 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
+import android.telecom.Call;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -48,6 +63,7 @@ public class ScanFragment extends Fragment {
 
     ImageButton BtnDeviceUpload;
     ImageView imgUploaded;
+    TextView textViewResult;
 
     public ScanFragment() {
         // Required empty public constructor
@@ -101,6 +117,8 @@ public class ScanFragment extends Fragment {
 
         imgUploaded = view.findViewById(R.id.imageViewUpload);
 
+        textViewResult = view.findViewById(R.id.textResult);
+
         // Set click listener on the button
         btnCameraUpload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,6 +137,64 @@ public class ScanFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void makeApiCall(final byte[] imageByteArray) {
+        OkHttpClient client = new OkHttpClient();
+
+        // Create MultipartBody to send the image file
+        RequestBody requestBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("file", "image.jpg", RequestBody.create(MediaType.parse("image/jpeg"), imageByteArray))
+                .build();
+
+        // Create the request
+        Request request = new Request.Builder()
+                .url("https://chamodadesilva-test-docker-cin.hf.space/predict")
+                .post(requestBody)
+                .build();
+
+        // Execute the request asynchronously
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onResponse(@NonNull okhttp3.Call call, @NonNull Response response) throws IOException {
+                // Handle API call response
+                if (response.isSuccessful()) {
+                    final String responseBody = response.body().string();
+                    try {
+                        final JSONObject jsonResponse = new JSONObject(responseBody);
+                        final double maturityScore = jsonResponse.getDouble("maturity_score");
+                        final String maturityStatus = jsonResponse.getString("maturity_status");
+
+                        // Run UI updates on the main thread
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                // Now you can use these values to update UI elements
+                                Log.d("API_RESPONSE", "Maturity Score: " + maturityScore);
+                                Log.d("API_RESPONSE", "Maturity Status: " + maturityStatus);
+
+                                // Update TextView with maturity status
+                                textViewResult.setText(maturityStatus);
+                            }
+                        });
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    // Handle unsuccessful response
+                    String errorMessage = response.message();
+                    // Log the error message
+                    Log.e("API_ERROR", "Error: " + errorMessage);
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull okhttp3.Call call, @NonNull IOException e) {
+                // Handle API call failure
+                e.printStackTrace();
+            }
+        });
     }
 
     private void dispatchTakePictureIntent() {
@@ -142,6 +218,16 @@ public class ScanFragment extends Fragment {
                 Uri selectedImageUri = data.getData();
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), selectedImageUri);
                 imgUploaded.setImageBitmap(bitmap);
+                // Make API call with the byte array
+                // Convert bitmap to byte array
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                byte[] byteArray = byteArrayOutputStream.toByteArray();
+
+                // Update TextView with maturity status
+                textViewResult.setText("Waiting for result!");
+                // Make API call with the byte array
+                makeApiCall(byteArray);
             } catch (IOException e) {
                 e.printStackTrace();
             }

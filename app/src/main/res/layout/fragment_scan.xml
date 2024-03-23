@@ -35,13 +35,26 @@
     <ImageView
         android:id="@+id/imageViewUpload"
         android:layout_width="382dp"
-        android:layout_height="292dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginBottom="194dp"
         android:src="@drawable/add_image"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textResult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.287" />
+
+    <TextView
+        android:id="@+id/textResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="Please use one following options.."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewUpload" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
