@@ -44,4 +44,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     // OkHttp dependency
     implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+    //to circulor image view
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }

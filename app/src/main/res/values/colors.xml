@@ -11,6 +11,7 @@
     <color name="one">#B19470</color>
     <color name="two">#76453B</color>
     <color name="three">#F8FAE5</color>
-    <color name="app_primary">#adf7b6</color>
+    <color name="app_primary">#638889</color>
+    <color name="app_background">#9DBC98</color>
 
 </resources>

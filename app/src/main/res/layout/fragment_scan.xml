@@ -4,23 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/app_background"
     app:circularflow_radiusInDP="true"
     tools:context=".ScanFragment">
 
+    <!--    <ImageView-->
+<!--        android:id="@+id/imageViewUpload"-->
+<!--        android:layout_width="334dp"-->
+<!--        android:layout_height="286dp"-->
+<!--        android:layout_marginTop="64dp"-->
+<!--        android:layout_marginBottom="56dp"-->
+<!--        android:src="@drawable/add_image"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/textResult"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <ImageButton
         android:id="@+id/btn_camera"
         android:layout_width="138dp"
         android:layout_height="122dp"
         android:layout_marginEnd="8dp"
+        android:background="@drawable/round_btn"
         android:backgroundTint="@color/app_primary"
         android:src="@drawable/camera_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_upload"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791"
+        app:layout_constraintVertical_bias="0.898"
         tools:src="@drawable/camera_icon" />
 
     <ImageButton
@@ -28,42 +41,43 @@
         android:layout_width="138dp"
         android:layout_height="122dp"
         android:layout_marginStart="8dp"
+        android:background="@drawable/round_btn"
         android:backgroundTint="@color/app_primary"
         android:src="@drawable/upload_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_camera"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791"
+        app:layout_constraintVertical_bias="0.898"
         tools:src="@drawable/upload_icon" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewUpload"
-        android:layout_width="334dp"
-        android:layout_height="286dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="337dp"
+        android:layout_height="379dp"
         android:layout_marginBottom="56dp"
-
         android:src="@drawable/add_image"
-        app:layout_constraintBottom_toTopOf="@+id/textResult"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.229" />
 
     <TextView
         android:id="@+id/textResult"
         android:layout_width="300dp"
         android:layout_height="30dp"
+        android:fontFamily="casual"
         android:text="Please choose an option.."
-
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_camera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.579" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewUpload"
+        app:layout_constraintVertical_bias="0.367" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
