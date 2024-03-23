@@ -56,7 +56,7 @@
         android:layout_width="337dp"
         android:layout_height="379dp"
         android:layout_marginBottom="56dp"
-        android:src="@drawable/add_image"
+        android:src="@drawable/sprout"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,18 +66,20 @@
 
     <TextView
         android:id="@+id/textResult"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
+        android:layout_width="400dp"
+        android:layout_height="40dp"
         android:fontFamily="casual"
-        android:text="Please choose an option.."
+        android:text="කරුණාකර විකල්පයක් තෝරන්න"
         android:textAlignment="center"
+        android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn_camera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewUpload"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintVertical_bias="0.542" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

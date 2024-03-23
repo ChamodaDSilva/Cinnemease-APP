@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             System.out.println("Item got "+item.toString());
-            if (item.toString().equals("Home")) {
+            if (item.toString().equals("විස්තර")) {
                 replaceFragment(new HomeFragment());
-            } else if (item.toString().equals("Scan"))  {
+            } else if (item.toString().equals("අස්වනු පරීක්ෂාව"))  {
                 replaceFragment(new ScanFragment());
             } else if (item.toString().equals("History"))  {
                 replaceFragment(new HistoryFragment());

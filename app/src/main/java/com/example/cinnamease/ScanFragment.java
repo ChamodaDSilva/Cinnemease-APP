@@ -5,6 +5,7 @@ import android.Manifest;
 
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -176,13 +177,18 @@ public class ScanFragment extends Fragment {
 
                                 String textResult;
                                 if (maturityStatus.equals("Matured")){
-                                    textResult="You are in the best time to harvest.";
+                                    textResult="අස්වැන්න නෙළීමට හොඳම කාලයයි.";
+                                    // Update TextView with maturity status
+                                    textViewResult.setText(textResult);
+                                    textViewResult.setTextColor(Color.BLUE);
                                 }else{
-                                    textResult="It's not the best time to harvest.";
+                                    textResult="අස්වැන්න නෙළීමට හොඳම කාලය නොවේ.";
+                                    // Update TextView with maturity status
+                                    textViewResult.setText(textResult);
+                                    textViewResult.setTextColor(Color.RED);
                                 }
 
-                                // Update TextView with maturity status
-                                textViewResult.setText(textResult);
+
                             }
                         });
                     } catch (JSONException e) {
@@ -213,6 +219,7 @@ public class ScanFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        textViewResult.setTextColor(Color.BLACK);
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == getActivity().RESULT_OK) {
             // Capture image from camera
@@ -226,7 +233,7 @@ public class ScanFragment extends Fragment {
             byte[] byteArray = byteArrayOutputStream.toByteArray();
 
             // Update TextView with maturity status
-            textViewResult.setText("Waiting for result!");
+            textViewResult.setText("කරුණාකර රැඳී සිටින්න!");
             // Make API call with the byte array
             makeApiCall(byteArray);
 
@@ -243,7 +250,7 @@ public class ScanFragment extends Fragment {
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
 
                 // Update TextView with maturity status
-                textViewResult.setText("Waiting for result!");
+                textViewResult.setText("කරුණාකර රැඳී සිටින්න!");
                 // Make API call with the byte array
                 makeApiCall(byteArray);
             } catch (IOException e) {
@@ -261,7 +268,7 @@ public class ScanFragment extends Fragment {
                 // Permission granted, proceed with camera operation
             } else {
                 // Permission denied, show a message or handle it gracefully
-                Toast.makeText(requireContext(), "Camera permission denied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "කැමරා අවසරයක් නැත", Toast.LENGTH_SHORT).show();
             }
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);

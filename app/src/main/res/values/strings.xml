@@ -20,9 +20,9 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="output_page">OutPut Page</string>
     <string name="matured_yayy">Matured, Yayy!</string>
-    <string name="scan_nav">Scan</string>
-    <string name="home_nav">Home</string>
-    <string name="history_nav">History</string>
+    <string name="scan_nav">අස්වනු පරීක්ෂාව</string>
+    <string name="home_nav">විස්තර</string>
+    <string name="history_nav">ඉතිහාසය</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="history_page_nav">History Page</string>
