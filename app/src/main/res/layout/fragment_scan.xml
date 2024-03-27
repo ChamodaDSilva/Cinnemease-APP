@@ -9,60 +9,65 @@
     tools:context=".ScanFragment">
 
     <!--    <ImageView-->
-<!--        android:id="@+id/imageViewUpload"-->
-<!--        android:layout_width="334dp"-->
-<!--        android:layout_height="286dp"-->
-<!--        android:layout_marginTop="64dp"-->
-<!--        android:layout_marginBottom="56dp"-->
-<!--        android:src="@drawable/add_image"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/textResult"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <!--        android:id="@+id/imageViewUpload"-->
+    <!--        android:layout_width="334dp"-->
+    <!--        android:layout_height="286dp"-->
+    <!--        android:layout_marginTop="64dp"-->
+    <!--        android:layout_marginBottom="56dp"-->
+    <!--        android:src="@drawable/add_image"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/textResult"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <ImageButton
+
+    <Button
         android:id="@+id/btn_camera"
-        android:layout_width="138dp"
-        android:layout_height="122dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="304dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/round_btn"
         android:backgroundTint="@color/app_primary"
-        android:src="@drawable/camera_icon"
+        android:contextClickable="false"
+        android:text="කැමරාවෙන්"
+        app:icon="@drawable/camera_icon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_upload"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewUpload"
+        app:layout_constraintVertical_bias="0.365"
         tools:src="@drawable/camera_icon" />
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_upload"
-        android:layout_width="138dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="304dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/round_btn"
         android:backgroundTint="@color/app_primary"
-        android:src="@drawable/upload_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_camera"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898"
-        tools:src="@drawable/upload_icon" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageViewUpload"
-        android:layout_width="337dp"
-        android:layout_height="379dp"
-        android:layout_marginBottom="56dp"
-        android:src="@drawable/sprout"
-
+        android:text="කෙලින්ම දුරකථන ගබඩාවෙන්"
+        app:icon="@drawable/upload_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_camera"
+        app:layout_constraintVertical_bias="0.025"
+        tools:src="@drawable/upload_icon" />
+
+    <ImageView
+        android:id="@+id/imageViewUpload"
+        android:layout_width="263dp"
+        android:layout_height="276dp"
+        android:layout_marginBottom="56dp"
+        android:src="@drawable/file"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.229" />
+        app:layout_constraintVertical_bias="0.146" />
 
     <TextView
         android:id="@+id/textResult"
@@ -77,9 +82,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn_camera"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewUpload"
-        app:layout_constraintVertical_bias="0.542" />
+        app:layout_constraintVertical_bias="0.663" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

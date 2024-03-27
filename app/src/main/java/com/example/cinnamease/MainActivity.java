@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new HomeFragment());
             } else if (item.toString().equals("අස්වනු පරීක්ෂාව"))  {
                 replaceFragment(new ScanFragment());
-            } else if (item.toString().equals("ඉතිහාසය"))  {
+            } else if (item.toString().equals("අපි ගැන"))  {
                 replaceFragment(new HistoryFragment());
             }
             return true;

@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -60,9 +61,9 @@ public class ScanFragment extends Fragment {
     private static final int REQUEST_IMAGE_FROM_STORAGE = 2;
 
 
-    ImageButton btnCameraUpload;
+    Button btnCameraUpload;
 
-    ImageButton BtnDeviceUpload;
+    Button BtnDeviceUpload;
     ImageView imgUploaded;
     TextView textViewResult;
 
