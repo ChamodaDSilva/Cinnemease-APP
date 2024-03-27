@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,24 +17,156 @@
             android:backgroundTint="@color/app_background"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@color/app_primary"
+                android:fontFamily="sans-serif-medium"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="Cinnamease වෙත සාදරයෙන් පිළිගනිමු"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:background="@color/app_background"
-                android:src="@drawable/info1" />
+                android:src="@drawable/famer" />
 
             <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:text="බෝග ස්ථාපනය"
+
+                android:textAlignment="center"
+                android:textColor="#3F51B5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="රෝපණ ද්‍රව්‍ය"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="කුරුඳු සාමාන්‍යයෙන් මහා පරිමාණයෙන් ව්‍යාප්ත කරනුයේ බීජ මගිනි. දඬු කැබලි මගින් වර්ධක ප්‍රචාරණය ද සිදු කළ හැකිය. හොඳින් ඉදුණු බීජ තෝරාගෙන හොඳින් සෝදා ඵලාවරණය ඉවත් කර මතුපිට පස්, ගොම පෙහොර, වැලි සහ කොහු බත් සමාන කොටස් වලින් පුරවන ලද සෙන්ටිමීටර් 12.5 X 20.0 පොලිතීන් මලුවල පැළ කළ යුතුය.
+බීජ පහක් හෝ අටක්  එක් මල්ලක රෝපණය කරන අතර මාස දෙකකට පමණ පසු ශක්තිමත් පැළ 4-5 ක් පමණක් ඉතිරිකර අනවශ්‍ය පැළ ඉවත් කිරීම සිදු කරනු ලැබේ."
+/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:text="ක්ෂේත්‍ර රෝපණය"
+
+                android:textAlignment="center"
+                android:textColor="#3F51B5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="පරතරය – සෙන්ටිමීටර් 120 x 90 (හෙක්ටයාරයකට පැල 9000)
+මෝසම් වැසි සමයේ සිටුවීම සිදු කෙරේ. හොඳින් වැඩුණු, රෝගවලින් තොර, මාස හතරක් වයසැති බීජ පැල සෙන්ටිමීටර් 30 x 30 x 30 වළවල් තුල සිටුවනු ලැබේ. රෝපණ වළ මතුපිට පස් හා ගොම පොහොර හෝ කොම්පෝස්ට් වලින් පුරවනු ලබන අතර බීජ පැල 4-5ක් සහිත බෑගයක් එක් වළක රෝපණය කෙරේ."
+/>
+
+            <TextView
+                android:layout_marginTop="10dp"
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:background="@color/app_background"
-                android:fontFamily="sans-serif-condensed"
-                android:text="@string/cinnamon_info1"
+                android:layout_height="29dp"
+                android:text="බෝග ආරක්ෂණය"
+
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textSize="20sp" />
+                android:textColor="#3F51B5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="රළු පොතු රෝග: Phomopsis sps."
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="රළු පොතු රෝගය කුරුඳු වල බහුලව දක්නට ලැබෙන රෝගයකි. එය නොමේරූ රිකිලි මත පොතු දුඹුරු පැහැ ලප වලින් ආරම්භ වන අතර පසුව පොත්ත පුරා ක්‍රමයෙන් පැතිරෙයි. ආසාදිත ශාක පත්‍ර වල හරිතක්ෂය පෙන්නුම් කරන අතර දරුණු තත්වයන් යටතේ ආසාදිත නොමේරූ ශාක මිය යනු ඇත. ආසාධීත පොතු භාවිතයට ගත නොහැක. රෝගී ශාක විනාශ කිරීමෙන් හා නිවැරදි ශෂ්‍ය විද්‍යාත්මක පිළිවෙත් අනුගමනය කිරීමෙන් රෝග පාලනය කළ හැකිය. අස්වනු නෙළීම නිවැරදි කාල පරාසයන් තුළ සිදු කළ යුතු අතර අතිරික්ත පාර්ශ්වීය අතු ඉවත් කළ යුතුය. රසායනික ප්‍රතිකාරයක් ලෙස 1% බෝඩෝ මිශ්‍රණය හෝ තඹ පාදක වූ දිලීර නාශකයක් ඉසිය හැක." />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="සුදු මුල් රෝගය"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="මෙය Fomes noxis ලෙස හැඳින්වෙන දිලීරය හේතුවෙන් හටගනී. කලින් රබර් වගා කළ ඉඩම්වල රෝපණය කරන ලද කුරුඳු වල බහුලව දක්නට ලැබේ. පත්‍ර කහ වී පසුව කොළ හැලීම සහ ශාක හදිසියේ මිය යාම දෘශ්‍යමාන රෝග ලක්ෂණ වේ. ආසාදිත ශාකවල මුල් මත සුදු වර්ණ දිලීර මයිසිලියා වර්ධනය නිරීක්ෂණය කළ හැකිය.
+
+රෝග පැතිරීම පාලනය කිරීම සඳහා මිය ගිය ශාක උදුරා පුළුස්සා දැමිය යුතුය. මූල පාදස්ථය පිරිසිදු කළ යුතුය. එවැනි ඉඩම්වල නව ශාක පිහිටුවන විට ආසාදිත ශාක පාදස්ථයට හා රෝපණ වළට සල්ෆර් කුඩු යෙදිය යුතුය.
+
+අනෙකුත් සුළු රෝග නම් කොළ අංගමාරය, කොළ මත කළු powdery mildew ඇල්ගී වර්ධනය වීමයි." />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="පළිබෝධකයන්"
+                android:textAlignment="center"
+                android:textColor="#3F51B5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="රෝස කඳ විදින්නා: Ichneumoniptera cf.xanthosoma"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="වැඩිහිටි සලබයා කුරුඳු පැළෑටියේ පාදස්ථයේ බිත්තර දමන අතර දළඹුවා (කීටයන්) පාංශු මතුපිටට ආසන්නයෙන් කඳ තුලට ඇතුළු වී කඳ අභ්‍යන්තරය ආහාරයට ගනී. මෙම පළිබෝධ හානිය බහුලව දක්නට ලැබෙන්නේ දුර්වල වගා කළමනාකරණය සහිත පැරණි වතු වල ය. එහි ප්‍රතිඵලයක් ලෙස නව රිකිලි මිය යා හැකි අතර සමහර පරිණත රිකිලි පාදයේ සිට කඩා වැටේ. නව රිකිලි දැමීමද දුර්වල වේ. අවසානයේදී ක්‍රමයෙන් පඳුර මිය යනු ඇත. ශාක පාදස්ථය ආවරණය කිරීමෙන් හා නිසි ලෙස පාංශු සංරක්ෂණය කිරීමෙන් හානිය සාර්ථකව පාලනය කළ හැකිය. හානිය බරපතල නම්, කාර්බෆ්‍යුරාන් සහ ක්ලෝරෝෆයිරොෆොස් වැනි රසායනික ද්‍රව්‍ය භාවිතා කළ හැකිය.
+
+අනෙකුත් සුළු පළිබෝධ ගැටළු වන්නේ කුරුඳු රිකිලි විදින්නා, කූඩිත්තන් හා මයිටාවන්, පත්‍ර කණින්නන් හා කුරුඳු සමනලයින් වේ."
+                android:textColor="#000000" />
         </LinearLayout>
     </ScrollView>
 

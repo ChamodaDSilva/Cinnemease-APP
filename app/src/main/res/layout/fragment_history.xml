@@ -11,7 +11,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/app_background">
+        android:background="@color/app_background"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:id="@+id/textView6"
@@ -39,17 +41,54 @@
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.966" />
+            app:layout_constraintVertical_bias="0.981" />
 
         <TextView
             android:id="@+id/textView7"
-            android:layout_width="361dp"
-            android:layout_height="736dp"
+            android:layout_width="329dp"
+            android:layout_height="86dp"
             android:text="Developed by Chamoda De Silva"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintVertical_bias="0.057" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/facebook_icon"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.31"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.974" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/linkdin"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.973" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/google_icon"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.973" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
