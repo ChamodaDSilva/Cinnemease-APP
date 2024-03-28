@@ -152,7 +152,7 @@ public class ScanFragment extends Fragment {
 
         // Create the request
         Request request = new Request.Builder()
-                .url("https://chamodadesilva-test-docker-cin.hf.space/predict")
+                .url("https://chamodadesilva-cinnamease-api.hf.space/predict")
                 .post(requestBody)
                 .build();
 
@@ -200,6 +200,9 @@ public class ScanFragment extends Fragment {
                     String errorMessage = response.message();
                     // Log the error message
                     Log.e("API_ERROR", "Error: " + errorMessage);
+                    textViewResult.setText(errorMessage);
+                    textViewResult.setTextColor(Color.WHITE);
+                    textViewResult.setBackgroundColor(Color.RED);
                 }
             }
 
