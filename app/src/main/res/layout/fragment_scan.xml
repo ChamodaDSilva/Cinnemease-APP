@@ -36,14 +36,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewUpload"
-        app:layout_constraintVertical_bias="0.365"
+        app:layout_constraintVertical_bias="0.267"
         tools:src="@drawable/camera_icon" />
 
     <Button
         android:id="@+id/btn_upload"
         android:layout_width="304dp"
         android:layout_height="62dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_btn"
         android:backgroundTint="@color/app_primary"
         android:text="කෙලින්ම දුරකථන ගබඩාවෙන්"
@@ -52,15 +52,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_camera"
-        app:layout_constraintVertical_bias="0.025"
+        app:layout_constraintVertical_bias="0.0"
         tools:src="@drawable/upload_icon" />
 
     <ImageView
         android:id="@+id/imageViewUpload"
-        android:layout_width="263dp"
-        android:layout_height="276dp"
+        android:layout_width="307dp"
+        android:layout_height="328dp"
         android:layout_marginBottom="56dp"
-        android:src="@drawable/file"
+        android:src="@drawable/banner"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,6 +84,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewUpload"
-        app:layout_constraintVertical_bias="0.663" />
+        app:layout_constraintVertical_bias="0.276" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

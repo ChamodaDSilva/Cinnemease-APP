@@ -24,7 +24,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"
         android:text="@string/hello_again"
-        android:textColor="@color/text_large"
+        android:textColor="@color/app_primary"
         android:textSize="35sp"
         android:textStyle="bold"
 
@@ -37,7 +37,7 @@
         android:text="@string/welcome_back_you_ve_been_missed"
         android:textSize="20sp"
         android:gravity="center"
-        android:textColor="@color/text_small"
+        android:textColor="@color/black"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="24dp"/>
 
@@ -83,7 +83,7 @@
         android:text="@string/sign_in"
         android:textColor="#FFFFFFFF"
         android:textSize="25sp"
-        android:backgroundTint="@color/button_bg"
+        android:backgroundTint="@color/app_primary"
         />
 
     <TextView
@@ -93,7 +93,7 @@
         android:layout_marginBottom="24dp"
         android:gravity="center"
         android:text="@string/or"
-        android:textColor="@color/text_small"
+        android:textColor="@color/app_primary"
         android:textSize="20sp" />
 
     <TextView
@@ -103,7 +103,7 @@
         android:layout_marginBottom="24dp"
         android:gravity="center"
         android:text="@string/sign_in_with"
-        android:textColor="@color/text_small"
+        android:textColor="@color/app_primary"
         android:textSize="20sp" />
 
 
@@ -111,57 +111,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/Emp_1"
-            android:layout_width="39dp"
-            android:layout_height="28dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent" />
-
-        <ImageButton
-            android:id="@+id/Emp_2"
-            android:layout_width="39dp"
-            android:layout_height="28dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent" />
-
-        <!-- Google Sign In Button -->
-        <ImageButton
-            android:id="@+id/buttonSignInGoogle"
-            android:layout_width="39dp"
-            android:layout_height="28dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/google_icon" />
-
-        <!-- Facebook Sign In Button -->
-        <ImageButton
-            android:id="@+id/buttonSignInFacebook"
-            android:layout_width="39dp"
-            android:layout_height="28dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/facebook_icon" />
-
-        <!-- Apple Sign In Button -->
-        <ImageButton
-            android:id="@+id/buttonSignInApple"
-            android:layout_width="39dp"
-            android:layout_height="28dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/apple_icon" />
-
-        <ImageButton
-            android:id="@+id/Emp_3"
-            android:layout_width="39dp"
-            android:layout_height="28dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent" />
 
         <ImageButton
             android:id="@+id/Emp_4"
@@ -179,7 +128,7 @@
 
         <TextView
             android:id="@+id/textViewSignUp"
-            android:layout_width="251dp"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingTop="16dp"
@@ -191,19 +140,19 @@
 
         <Button
             android:id="@+id/buttonSignUp1"
-            android:layout_width="104dp"
-            android:layout_height="36dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/screen_bg"
             android:text="@string/sign_up"
+            android:textColor="@color/app_primary"
             android:textSize="12sp"
-            android:textColor="@color/text_small"
-            android:textStyle="bold"
-            android:backgroundTint="@color/screen_bg"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="662dp"
-        android:layout_height="89dp"
-        app:srcCompat="@drawable/cinnamon" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/create" />
 
 </LinearLayout>
