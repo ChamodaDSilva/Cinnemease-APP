@@ -1,19 +1,17 @@
 package com.example.cinnamease;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-
 import java.io.IOException;
 
 public class Sign_In extends AppCompatActivity {
@@ -21,6 +19,7 @@ public class Sign_In extends AppCompatActivity {
     Button buttonSignIn;
     EditText editTextEmail;
     EditText editTextPassword;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +30,18 @@ public class Sign_In extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
 
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Signing in...");
+        progressDialog.setCancelable(false);
+
         buttonSignIn.setOnClickListener(view -> signIn());
     }
 
     private void signIn() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
+
+        progressDialog.show();
 
         OkHttpClient client = new OkHttpClient();
 
@@ -56,6 +61,7 @@ public class Sign_In extends AppCompatActivity {
         client.newCall(request).enqueue(new okhttp3.Callback() {
             @Override
             public void onResponse(okhttp3.Call call, Response response) throws IOException {
+                progressDialog.dismiss();
                 // Handle response
                 String responseBody = response.body().string();
                 if (response.isSuccessful()) {
@@ -92,6 +98,7 @@ public class Sign_In extends AppCompatActivity {
 
             @Override
             public void onFailure(okhttp3.Call call, IOException e) {
+                progressDialog.dismiss();
                 // Handle failure
                 runOnUiThread(() -> {
                     Toast.makeText(Sign_In.this, "Login failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();

@@ -1,5 +1,6 @@
 package com.example.cinnamease;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.Manifest;
 
@@ -22,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,6 +68,8 @@ public class ScanFragment extends Fragment {
     Button BtnDeviceUpload;
     ImageView imgUploaded;
     TextView textViewResult;
+
+    ProgressDialog progressDialog;
 
     public ScanFragment() {
         // Required empty public constructor
@@ -142,6 +146,12 @@ public class ScanFragment extends Fragment {
     }
 
     private void makeApiCall(final byte[] imageByteArray) {
+        // Show ProgressBar before making the API call
+        progressDialog = new ProgressDialog(requireContext());
+        progressDialog.setMessage("විශ්ලේෂණය සිදු වෙමින් පවතී...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+
         OkHttpClient client = new OkHttpClient();
 
         // Create MultipartBody to send the image file
@@ -160,6 +170,10 @@ public class ScanFragment extends Fragment {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onResponse(@NonNull okhttp3.Call call, @NonNull Response response) throws IOException {
+                // Hide ProgressDialog after receiving the response
+                if (progressDialog != null && progressDialog.isShowing()) {
+                    progressDialog.dismiss();
+                }
                 // Handle API call response
                 if (response.isSuccessful()) {
                     final String responseBody = response.body().string();
@@ -208,6 +222,9 @@ public class ScanFragment extends Fragment {
 
             @Override
             public void onFailure(@NonNull okhttp3.Call call, @NonNull IOException e) {
+                if (progressDialog != null && progressDialog.isShowing()) {
+                    progressDialog.dismiss();
+                }
                 // Handle API call failure
                 e.printStackTrace();
             }
