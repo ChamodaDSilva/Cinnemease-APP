@@ -5,9 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/white">
-
-    <!-- Space Heading -->
+    android:background="@drawable/bg">
 
     <TextView
         android:layout_width="411dp"
@@ -17,31 +15,28 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <!-- "Hello Again!" Heading -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"
+        android:fontFamily="casual"
         android:text="@string/hello_again"
-        android:textColor="@color/app_primary"
-        android:textSize="35sp"
-        android:textStyle="bold"
+        android:textColor="@color/text_large"
+        android:textSize="37sp"
+        android:textStyle="bold" />
 
-        />
-
-    <!-- "Welcome Back! You’ve Been Missed!" Heading -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_back_you_ve_been_missed"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textColor="@color/black"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="@string/welcome_back_you_ve_been_missed"
+        android:textColor="@color/text_large"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <!-- Space Heading -->
     <TextView
         android:layout_width="411dp"
         android:layout_height="28dp"
@@ -50,22 +45,22 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <!-- Email EditText -->
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:autofillHints=" " />
+        android:textColorHint="@color/text_small"
+        android:autofillHints="" />
 
-    <!-- Password EditText -->
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:textColorHint="@color/text_small"
         android:autofillHints="" />
 
     <TextView
@@ -75,15 +70,15 @@
         android:layout_marginBottom="16dp"
         android:textSize="30sp" />
 
-    <!-- Sign In Button -->
     <Button
         android:id="@+id/buttonSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sign_in"
-        android:textColor="#FFFFFFFF"
-        android:textSize="25sp"
-        android:backgroundTint="@color/app_primary"
+        android:textColor="@color/screen_bg"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:backgroundTint="@color/text_large"
         />
 
     <TextView
@@ -93,18 +88,9 @@
         android:layout_marginBottom="24dp"
         android:gravity="center"
         android:text="@string/or"
-        android:textColor="@color/app_primary"
-        android:textSize="20sp" />
-
-    <TextView
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="24dp"
-        android:gravity="center"
-        android:text="@string/sign_in_with"
-        android:textColor="@color/app_primary"
-        android:textSize="20sp" />
+        android:textColor="@color/text_large"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
     <LinearLayout
@@ -133,9 +119,9 @@
             android:gravity="center"
             android:paddingTop="16dp"
             android:text="@string/don_t_have_an_account_sign_in"
-            android:textColor="@color/text_next"
+            android:textColor="@color/two"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold|italic" />
 
 
     </LinearLayout>
@@ -146,8 +132,9 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/screen_bg"
         android:text="@string/sign_up"
-        android:textColor="@color/app_primary"
-        android:textSize="14dp"
+        android:textAlignment="center"
+        android:textColor="@color/text_large"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
 </LinearLayout>

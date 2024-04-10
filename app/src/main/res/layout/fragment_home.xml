@@ -26,7 +26,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:text="Cinnamease වෙත සාදරයෙන් පිළිගනිමු"
+                android:text="Cinnamease"
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"

@@ -17,6 +17,7 @@ import java.io.IOException;
 public class Sign_In extends AppCompatActivity {
 
     Button buttonSignIn;
+    Button buttonSignUp;
     EditText editTextEmail;
     EditText editTextPassword;
     ProgressDialog progressDialog;
@@ -29,12 +30,21 @@ public class Sign_In extends AppCompatActivity {
         buttonSignIn = findViewById(R.id.buttonSignIn);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
+        buttonSignUp =findViewById(R.id.buttonSignUp1);
 
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Signing in...");
+        progressDialog.setMessage("ඇතුල් වෙමින් පවතී...");
         progressDialog.setCancelable(false);
 
         buttonSignIn.setOnClickListener(view -> signIn());
+
+        buttonSignUp.setOnClickListener(view -> {
+            Intent intent = new Intent(Sign_In.this, Sign_Up.class);
+            startActivity(intent);
+            finish(); // Prevent going back to splash screen when pressing back button
+        });
+
+
     }
 
     private void signIn() {
@@ -57,7 +67,6 @@ public class Sign_In extends AppCompatActivity {
                 .addHeader("Content-Type", "application/json")
                 .build();
 
-        // Execute the request asynchronously
         client.newCall(request).enqueue(new okhttp3.Callback() {
             @Override
             public void onResponse(okhttp3.Call call, Response response) throws IOException {
@@ -67,16 +76,13 @@ public class Sign_In extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     if (responseBody.contains("User logged in successfully")) {
                         runOnUiThread(() -> {
-                            //Toast.makeText(Sign_In.this, "Login successful", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(Sign_In.this, MainActivity.class);
                             startActivity(intent);
-                            finish(); // Prevent going back to splash screen when pressing back button
-                            // Proceed to the next activity or perform necessary actions
+                            finish();
                         });
                     }else if (responseBody.contains("Invalid email or password")) {
                         runOnUiThread(() -> {
-                            Toast.makeText(Sign_In.this, "Invalid email or password", Toast.LENGTH_LONG).show();
-                            // Proceed to the next activity or perform necessary actions
+                            Toast.makeText(Sign_In.this, "වලංගු නොවන ඊමේල් හෝ මුරපදය!", Toast.LENGTH_LONG).show();
                         });
                     } else {
                         runOnUiThread(() -> {
@@ -86,7 +92,7 @@ public class Sign_In extends AppCompatActivity {
                 } else {
                     if (responseBody.contains("Invalid email or password")) {
                         runOnUiThread(() -> {
-                            Toast.makeText(Sign_In.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Sign_In.this, "වලංගු නොවන ඊමේල් හෝ මුරපදය!", Toast.LENGTH_SHORT).show();
                         });
                     } else {
                         runOnUiThread(() -> {
@@ -99,7 +105,6 @@ public class Sign_In extends AppCompatActivity {
             @Override
             public void onFailure(okhttp3.Call call, IOException e) {
                 progressDialog.dismiss();
-                // Handle failure
                 runOnUiThread(() -> {
                     Toast.makeText(Sign_In.this, "Login failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });

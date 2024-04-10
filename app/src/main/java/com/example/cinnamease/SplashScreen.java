@@ -18,11 +18,9 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                // Start main activity after splash screen duration
-//                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                 Intent intent = new Intent(SplashScreen.this, Sign_In.class);
                 startActivity(intent);
-                finish(); // Prevent going back to splash screen when pressing back button
+                finish();
             }
         }, SPLASH_SCREEN_DURATION);
     }

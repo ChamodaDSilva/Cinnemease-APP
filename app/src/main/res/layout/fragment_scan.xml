@@ -8,20 +8,6 @@
     app:circularflow_radiusInDP="true"
     tools:context=".ScanFragment">
 
-    <!--    <ImageView-->
-    <!--        android:id="@+id/imageViewUpload"-->
-    <!--        android:layout_width="334dp"-->
-    <!--        android:layout_height="286dp"-->
-    <!--        android:layout_marginTop="64dp"-->
-    <!--        android:layout_marginBottom="56dp"-->
-    <!--        android:src="@drawable/add_image"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/textResult"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.5"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-
     <Button
         android:id="@+id/btn_camera"
         android:layout_width="304dp"

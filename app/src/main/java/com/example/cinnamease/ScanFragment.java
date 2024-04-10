@@ -48,12 +48,9 @@ import okhttp3.Response;
  */
 public class ScanFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -72,7 +69,6 @@ public class ScanFragment extends Fragment {
     ProgressDialog progressDialog;
 
     public ScanFragment() {
-        // Required empty public constructor
     }
 
     /**
@@ -83,7 +79,6 @@ public class ScanFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment ScanFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static ScanFragment newInstance(String param1, String param2) {
         ScanFragment fragment = new ScanFragment();
         Bundle args = new Bundle();
@@ -107,16 +102,12 @@ public class ScanFragment extends Fragment {
                              Bundle savedInstanceState) {
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
-            // Permission is not granted, request it
             requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
         } else {
-            // Permission has already been granted, proceed with camera operation
         }
 
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_scan, container, false);
 
-        // Find the ImageButton by its ID
         btnCameraUpload = view.findViewById(R.id.btn_camera);
 
         BtnDeviceUpload =view.findViewById(R.id.btn_upload);
@@ -135,7 +126,6 @@ public class ScanFragment extends Fragment {
         BtnDeviceUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create an intent to pick an image from storage
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("image/*");
                 startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_IMAGE_FROM_STORAGE);
@@ -146,7 +136,6 @@ public class ScanFragment extends Fragment {
     }
 
     private void makeApiCall(final byte[] imageByteArray) {
-        // Show ProgressBar before making the API call
         progressDialog = new ProgressDialog(requireContext());
         progressDialog.setMessage("විශ්ලේෂණය සිදු වෙමින් පවතී...");
         progressDialog.setCancelable(false);
@@ -154,40 +143,36 @@ public class ScanFragment extends Fragment {
 
         OkHttpClient client = new OkHttpClient();
 
-        // Create MultipartBody to send the image file
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("file", "image.jpg", RequestBody.create(MediaType.parse("image/jpeg"), imageByteArray))
                 .build();
 
-        // Create the request
+
         Request request = new Request.Builder()
                 .url("https://chamodadesilva-cinnamease-api.hf.space/predict")
                 .post(requestBody)
                 .build();
 
-        // Execute the request asynchronously
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onResponse(@NonNull okhttp3.Call call, @NonNull Response response) throws IOException {
-                // Hide ProgressDialog after receiving the response
+
                 if (progressDialog != null && progressDialog.isShowing()) {
                     progressDialog.dismiss();
                 }
-                // Handle API call response
+
                 if (response.isSuccessful()) {
                     final String responseBody = response.body().string();
                     try {
                         final JSONObject jsonResponse = new JSONObject(responseBody);
-                        final double maturityScore = jsonResponse.getDouble("maturity_score");
                         final String maturityStatus = jsonResponse.getString("maturity_status");
 
                         // Run UI updates on the main thread
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                // Now you can use these values to update UI elements
-                                Log.d("API_RESPONSE", "Maturity Score: " + maturityScore);
+
                                 Log.d("API_RESPONSE", "Maturity Status: " + maturityStatus);
 
                                 String textResult;
@@ -196,17 +181,25 @@ public class ScanFragment extends Fragment {
                                     // Update TextView with maturity status
                                     textViewResult.setText(textResult);
                                     textViewResult.setTextColor(Color.BLUE);
-                                }else{
+                                }else if (maturityStatus.equals("Unmatured")){
                                     textResult="අස්වැන්න නෙළීමට හොඳම කාලය නොවේ.";
                                     // Update TextView with maturity status
                                     textViewResult.setText(textResult);
-                                    textViewResult.setTextColor(Color.RED);
+                                    textViewResult.setTextColor(Color.GREEN);
+                                }else{
+                                    textResult="සමාවෙන්න මට විශ්වාසයක් නැහැ.";
+                                    // Update TextView with maturity status
+                                    textViewResult.setText(textResult);
+                                    textViewResult.setTextColor(Color.GREEN);
                                 }
 
 
                             }
                         });
                     } catch (JSONException e) {
+                        String textResult="පද්ධති ගැටළුවක් විය හැක.";
+                        textViewResult.setText(textResult);
+                        textViewResult.setTextColor(Color.RED);
                         e.printStackTrace();
                     }
                 } else {
@@ -214,9 +207,10 @@ public class ScanFragment extends Fragment {
                     String errorMessage = response.message();
                     // Log the error message
                     Log.e("API_ERROR", "Error: " + errorMessage);
-                    textViewResult.setText(errorMessage);
-                    textViewResult.setTextColor(Color.WHITE);
-                    textViewResult.setBackgroundColor(Color.RED);
+                    String textResult="පද්ධති ගැටළුවක් විය හැක.";
+                    textViewResult.setText(textResult);
+                    textViewResult.setTextColor(Color.RED);
+                    textViewResult.setBackgroundColor(Color.WHITE);
                 }
             }
 
@@ -225,6 +219,9 @@ public class ScanFragment extends Fragment {
                 if (progressDialog != null && progressDialog.isShowing()) {
                     progressDialog.dismiss();
                 }
+                String textResult="පද්ධති ගැටළුවක් විය හැක.";
+                textViewResult.setText(textResult);
+                textViewResult.setTextColor(Color.RED);
                 // Handle API call failure
                 e.printStackTrace();
             }
