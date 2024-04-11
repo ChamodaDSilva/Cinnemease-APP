@@ -41,11 +41,6 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ScanFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ScanFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
@@ -71,14 +66,6 @@ public class ScanFragment extends Fragment {
     public ScanFragment() {
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ScanFragment.
-     */
     public static ScanFragment newInstance(String param1, String param2) {
         ScanFragment fragment = new ScanFragment();
         Bundle args = new Bundle();
